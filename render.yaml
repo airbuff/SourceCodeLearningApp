@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: coding-learning-app
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    # Redirect any unknown routes back to index.html for SPA routing
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: NODE_VERSION
+        value: 18.0.0

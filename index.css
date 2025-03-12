@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  
+  color-scheme: light dark;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #ffffff;
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.dark {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #111827;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+pre code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Add some syntax highlighting styles */
+.language-javascript, .language-js, .language-jsx {
+  color: #333;
+}
+
+.dark .language-javascript, .dark .language-js, .dark .language-jsx {
+  color: #e6e6e6;
+}
+
+.language-python, .language-py {
+  color: #3572A5;
+}
+
+.dark .language-python, .dark .language-py {
+  color: #68a3cf;
+}
+
+.language-html, .language-css {
+  color: #e44b23;
+}
+
+.dark .language-html, .dark .language-css {
+  color: #f2978c;
+}
