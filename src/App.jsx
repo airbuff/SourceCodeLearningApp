@@ -11,7 +11,7 @@ export default function App() {
 
   useEffect(() => {
     // Use a relative path to ensure it works in different environments
-    fetch("./data/languages.json")
+    fetch("../data/languages.json")
       .then((response) => response.json())
       .then((json) => {
         setData(json);
