@@ -4,19 +4,15 @@ import { Sidebar } from "./components/Sidebar";
 import { CodeDisplay } from "./components/CodeDisplay";
 import { QuizSection } from "./components/QuizSection";
 import { DarkModeToggle } from "./components/DarkModeToggle";
+import languagesData from "../data/languages.json";
 
 export default function App() {
   const [data, setData] = useState(null);
   const [selectedLanguage, setSelectedLanguage] = useState(null);
 
   useEffect(() => {
-    fetch("../data/languages.json")
-      .then((response) => response.json())
-      .then((json) => {
-        setData(json);
-        setSelectedLanguage(json.languages[0]);
-      })
-      .catch((error) => console.error("Error loading data:", error));
+  setData(languagesData);
+  setSelectedLanguage(languagesData.languages[0]);
   }, []);
 
   const handleLanguageSelect = (language) => {
