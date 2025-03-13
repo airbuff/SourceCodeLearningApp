@@ -10,15 +10,15 @@ export default function App() {
   const [selectedLanguage, setSelectedLanguage] = useState(null);
 
   useEffect(() => {
-    // Use a relative path to ensure it works in different environments
-fetch("/languages.json")
-  .then((response) => response.json())
-  .then((json) => {
-    setData(json);
-    setSelectedLanguage(json.languages[0]);
-  })
-  .catch((error) => console.error("Error loading data:", error));
-    
+    fetch("/data/languages.json")
+      .then((response) => response.json())
+      .then((json) => {
+        setData(json);
+        setSelectedLanguage(json.languages[0]);
+      })
+      .catch((error) => console.error("Error loading data:", error));
+  }, []);
+
   if (!data || !selectedLanguage) {
     return (
       <div className="flex items-center justify-center h-screen">
