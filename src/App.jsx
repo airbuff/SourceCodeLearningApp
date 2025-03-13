@@ -10,7 +10,7 @@ export default function App() {
   const [selectedLanguage, setSelectedLanguage] = useState(null);
 
   useEffect(() => {
-    fetch("/data/languages.json")
+    fetch("../data/languages.json")
       .then((response) => response.json())
       .then((json) => {
         setData(json);
