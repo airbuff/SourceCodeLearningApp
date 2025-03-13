@@ -11,15 +11,14 @@ export default function App() {
 
   useEffect(() => {
     // Use a relative path to ensure it works in different environments
-    fetch("../data/languages.json")
-      .then((response) => response.json())
-      .then((json) => {
-        setData(json);
-        setSelectedLanguage(json.languages[0]);
-      })
-      .catch((error) => console.error("Error loading data:", error));
-  }, []);
-
+fetch("/languages.json")
+  .then((response) => response.json())
+  .then((json) => {
+    setData(json);
+    setSelectedLanguage(json.languages[0]);
+  })
+  .catch((error) => console.error("Error loading data:", error));
+    
   if (!data || !selectedLanguage) {
     return (
       <div className="flex items-center justify-center h-screen">
